@@ -101,8 +101,6 @@ jobs:
                 working-directory: ./frontend
 
             -   name: build
-                env:
-                    REACT_APP_MOVIE_API_URL=http://localhost:5000
                 run: |
                     docker build --build-arg=REACT_APP_MOVIE_API_URL=http://localhost:5000 --tag=mp-frontend:latest .
                 working-directory: ./frontend
