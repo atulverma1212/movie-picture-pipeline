@@ -1,21 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
-  labels:
-    app: backend
+  name: my-k8s-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend
+      app: my-k8s-app
   template:
     metadata:
       labels:
-        app: backend
+        app: my-k8s-app
     spec:
       containers:
-        - name: backend
-          image: backend
-          ports:
-            - containerPort: 5000
+      - name: my-k8s-app
+        image: <your-container-registry>/<your-image>:latest
+        ports:
+        - containerPort: 5000
